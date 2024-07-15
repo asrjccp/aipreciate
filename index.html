@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World AI Appreciation Day</title>
+    <style>
+        :root {
+            --orange: #FFA500;
+            --teal: #008080;
+            --light-orange: #FFD700;
+            --light-teal: #20B2AA;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-orange);
+            color: var(--teal);
+        }
+
+        header {
+            background-color: var(--orange);
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--teal);
+            text-align: center;
+        }
+
+        .quote-container {
+            background-color: var(--light-teal);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .author {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--orange);
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>World AI Appreciation Day</h1>
+        <p>Celebrating the advancements and impact of Artificial Intelligence every July 16th.</p>
+
+        <div class="quote-container">
+            <p class="quote" id="quote"></p>
+            <p class="author" id="author"></p>
+        </div>
+    </main>
+
+    <script>
+        const quotes = [
+            { text: "The development of full artificial intelligence could spell the end of the human race.", author: "Stephen Hawking" },
+            { text: "The key to artificial intelligence has always been the representation.", author: "Jeff Hawkins" },
+            { text: "Artificial intelligence is growing up fast, as are robots whose facial expressions can elicit empathy and make your mirror neurons quiver.", author: "Diane Ackerman" },
+            { text: "Some people call this artificial intelligence, but the reality is this technology will enhance us. So instead of artificial intelligence, I think we'll augment our intelligence.", author: "Ginni Rometty" },
+            { text: "The question of whether a computer can think is no more interesting than the question of whether a submarine can swim.", author: "Edsger W. Dijkstra" }
+        ];
+
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+            document.getElementById('quote').textContent = `"${quote.text}"`;
+            document.getElementById('author').textContent = `- ${quote.author}`;
+        }
+
+        displayRandomQuote();
+        setInterval(displayRandomQuote, 10000); // Change quote every 10 seconds
+    </script>
+</body>
+</html>
